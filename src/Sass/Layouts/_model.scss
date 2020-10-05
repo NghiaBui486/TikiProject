@@ -1,0 +1,148 @@
+.header-modal__form {
+    padding-bottom: $pd-5;
+    .nav-pills {
+        li {
+            a {
+                border-bottom: $border-top-1;
+                @include icon($bg-button, $color-black-0, $border-radius_0, $fs-0, $line-height-3, $txt-center);
+            }
+            a.active {
+                @include icon($bg-button, $bgr-color-1, $border-radius_0, $fs-0, $line-height-3, $txt-center);
+                border-bottom: $border-bottom;
+            }
+        }
+    }
+}
+
+.tab-content {
+    .show {
+    }
+    .tab-pane{
+        .account__sign {
+            form {
+                .account__sign-form {
+                    overflow: hidden;
+                    label {
+                        @include hoverCard($width-auto-2);
+                        @include text($color-black-0, $font-size-3, $font-weight-2);
+                        float: left;
+                        line-height: 35px;
+                    }
+                    input.account-form {
+                        @include hoverCard($width-auto-3);
+                        float: left;
+                        margin-bottom: $mg-1;
+                    }
+                }
+                .check-form__account {
+                    padding-left: $pd-5;
+                    clear: both;
+                }
+                button {
+                    @include hoverCard($width-auto);
+                    margin-bottom: $mg-1;
+                    span {
+                        float: left;
+                    }
+                }
+            }
+        }
+        .add__account {
+            form {
+                .add__account-form {
+                    label {
+                        @include hoverCard($width-auto-2);
+                        @include text($color-black-0, $font-size-3, $font-weight-2);
+                        float: left;
+                        line-height: 30px;
+                    }
+                    input {
+                        @include hoverCard($width-auto-3);
+                        float: left;
+                        margin-bottom: $mg-1;
+                    }
+                }
+                .add__account-form-number {
+                    label {
+                        @include hoverCard($width-auto-2);
+                        @include text($color-black-0, $font-size-3, $font-weight-2);
+                        float: left;
+                        line-height: 30px;
+                    }
+                    input {
+                        @include hoverCard($width-auto-5);
+                        float: left;
+                        margin-bottom: $mg-1;
+                    }
+                    a {
+                        text-decoration: none;
+                        @include hoverCard($width-auto-8);
+                        @include icon($color-icon-header, $color-black-0, $border-radius_0, $font-size-1, $line-height-2, $txt-center);
+                        @include bottompd($pd-7);
+                        float: left;
+                        line-height: 30px;
+                    }
+                }
+                .add__account-form-check {
+                    label {
+                        @include text($color-black-0, $font-size-3, $font-weight-2);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include mediaQuery('medium') {
+    .tab-content {
+        .account__sign {
+            form  {
+                .account__sign-form {
+                    label {
+                        @include hoverCard($width-auto);
+                        @include text($color-black-0, $fs-0, $font-weight-2);
+                        float: none;
+                    }
+                    input.account-form {
+                        @include hoverCard($width-auto);
+                        float: none;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        .add__account {
+            form {
+                .add__account-form {
+                    label {
+                        @include hoverCard($width-auto);
+                        @include text($color-black-0, $fs-0, $font-weight-2);
+                        float: none;
+                    }
+                    input {
+                        @include hoverCard($width-auto);
+                        float: none;
+                    }
+                }
+                .add__account-form-number {
+                    label {
+                        @include hoverCard($width-auto);
+                        @include text($color-black-0, $fs-0, $font-weight-2);
+                        float: none;
+                    }
+                    input {
+                        @include hoverCard($width-auto);
+                        float: none;
+                    }
+                    a {
+                        @include hoverCard($width-auto);
+                        @include pdfooter($pd-7);
+                        @include text($color-black-0, $fs-0, $font-weight-2);
+                        float: none;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

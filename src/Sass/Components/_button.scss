@@ -1,0 +1,3 @@
+.btn--yellow-1 {
+    @include button($color-icon-header, $width-auto, $fs-0, $color-black-0, $pd-7, $pd-4, $border-radius_1, $fw-normal, $opacity-1);
+}

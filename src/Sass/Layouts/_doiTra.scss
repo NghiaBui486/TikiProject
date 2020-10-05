@@ -1,0 +1,229 @@
+.bg-breadcrum {
+    @include bg-container($bgr-color-7);
+    margin-bottom: $mg-10;
+    .breadcrumb-nav {
+        margin-bottom: $mg-0;
+    }
+}
+.doi-tra {
+    .title {
+        @include text($bg-header, $font-size-4, $fw-bold-1);
+        text-transform: $text-transform-1;
+    }
+    .description {
+        @include text($color-black-0, $fs-3, $font-weight-2);
+        a {
+            text-decoration: underline;
+        }
+    }
+    .step-header {
+        font-style: italic;
+        @include text-doitra($color-white-0, $fs-2, $fw-bold-1, $txt-center, $text-transform-1);
+        @include bg-container($bgr-color-8);
+        @include bottompd($pd-2);
+        @include text-mr($mg-11);
+        &::before {
+            content: "";
+            background-image: url('../../asset/data/img/3step.png');
+            @include width-category($width-number-1, $height-3);
+            position: $position-1;
+            background-repeat: no-repeat;
+            left: 30%;
+            bottom: 5px;
+            transform: translate(-30%, -5px);
+            -webkit-transform: translate(-30%, -5px);
+            -moz-transform: translate(-30%, -5px);
+            -ms-transform: translate(-30%, -5px);
+            -o-transform: translate(-30%, -5px);
+        }
+        span.text {
+            @include hoverCard($width-auto);
+        }
+    }
+    .step-header-1 {
+        font-style: italic;
+        @include text-doitra($color-white-0, $fs-2, $fw-bold-1, $txt-center, $text-transform-1);
+        @include bg-container($bgr-color-8);
+        @include bottompd($pd-2);
+        @include text-mr($mg-11);
+        &::before {
+            content: "";
+            background-image: url('../../asset/data/img/xoaytron.png');
+            @include width-category($width-number-1, $height-3);
+            position: $position-1;
+            background-repeat: no-repeat;
+            left: 30%;
+            bottom: 5px;
+            transform: translate(-30%, -5px);
+            -webkit-transform: translate(-30%, -5px);
+            -moz-transform: translate(-30%, -5px);
+            -ms-transform: translate(-30%, -5px);
+            -o-transform: translate(-30%, -5px);
+        }
+        span.text {
+            @include hoverCard($width-auto);
+        }
+    }
+    .step-header-2 {
+        font-style: italic;
+        @include text-doitra($color-white-0, $fs-2, $fw-bold-1, $txt-center, $text-transform-1);
+        @include bg-container($bgr-color-8);
+        @include bottompd($pd-2);
+        @include text-mr($mg-11);
+        span.text {
+            @include hoverCard($width-auto);
+        }
+    }
+    .step-detail {
+        @include pdfooter($pd-8);
+        .col-card-custom {
+            .card-custom__text {
+                @include br-card($border-auto-1, $border-radius_3);
+                .step-image {
+                    text-align: $txt-center;
+                    @include mr-card($mg-10);
+                }
+                .step-title {
+                    @include text-doitra(
+                        $bgr-color-1,
+                        $font-size-icon-star,
+                        $fw-bold-1,
+                        $txt-center,
+                        $text-transform-1
+                    );
+                }
+                .step-description {
+                    text-align: $txt-center;
+                    @include text($color-black-0, $font-size-3, $font-weight-2);
+                }
+            }
+        }
+    }
+    .time-body {
+        @include pdfooter($pd-8);
+        th {
+            @include text($color-white-0, $font-size-1, $fw-bold-1);
+            @include bg-container($bg-header);
+            @include table-doitra($txt-center, $text-transform-1, $border-color, $border-top-1);
+            vertical-align: middle;
+        }
+        td {
+            vertical-align: middle;
+            border-color: $border-color;
+            @include text($color-black-0, $fs-3, $font-weight-2);
+            line-height: $line-height;
+        }
+    }
+    .subtext-custom {
+        margin-bottom: $mg-6;
+        p {
+            margin-bottom: $mg-1;
+            @include text($color-black-0, $font-size-1, $fw-bold-1);
+            text-align: $txt-center;
+            font-weight: $font-weight-2;
+        }
+        .subtext-custom__pollicy {
+            font-weight: $fw-bold-1;
+        }
+    }
+    .col-text__category {
+        p {
+            text-align: $txt-center;
+            @include text($color-black-0, $font-size-3, $font-weight-2);
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+@include mediaQuery-1("medium") {
+    .doi-tra {
+        @include bg-container($bg-header);
+        .container-fluid {
+            max-width: $width-container-fl;
+            @include bg-container($bg-button);
+            padding-bottom: 60px;
+        }
+    }
+}
+
+@include mediaQuery("medium") {
+    .doi-tra {
+        .step-header {
+            font-size: $fs-0;
+            &::before {
+                content: "3";
+                background-image: none;
+                left: -40%;
+                bottom: -4px;
+                @include width-category($width-auto, $height-2);
+                transform: translate(4px, 40%);
+                -webkit-transform: translate(4px, 40%);
+                -moz-transform: translate(4px, 40%);
+                -ms-transform: translate(4px, 40%);
+                -o-transform: translate(4px, 40%);
+            }
+        }
+        .step-header-1 {
+            font-size: $fs-0;
+            &::before {
+                content: "";
+                background-image: none;
+            }
+        }
+        .step-header-2 {
+            font-size: $fs-0;
+        }
+        .step-detail {
+            @include pdfooter($pd-5);
+            .col-card-custom {
+                @include mrmainfooter($mg-6);
+                &:last-child {
+                    @include mrmainfooter($mg-3);
+                }
+            }
+        }
+        .time-body {
+            @include pdfooter($pd-5);
+        }
+    }
+}
+
+@include mediaQuery-2("smaller") {
+    .doi-tra {
+        .step-header {
+            &::before {
+                content: "3";
+                left: -42%;
+                bottom: 0;
+                transform: translate(0, 42%);
+                -webkit-transform: translate(0, 42%);
+                -moz-transform: translate(0, 42%);
+                -ms-transform: translate(0, 42%);
+                -o-transform: translate(0, 42%);
+            }
+        }
+        .col-btn_small {
+            button {
+                @include mrmainfooter($mg-1);
+            }
+        }
+    }
+}
+
+@include tablet {
+    .doi-tra {
+        .step-header {
+            &::before {
+                left: 22%;
+                bottom: 5px;
+            }
+        }
+        .step-header-1 {
+            &::before {
+                left: 22%;
+                bottom: 5px;
+            }
+        }
+    }
+}

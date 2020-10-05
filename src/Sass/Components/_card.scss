@@ -1,0 +1,210 @@
+.card-tiki {
+    margin: 30px 0px;
+    &:hover {
+        text-decoration: none;
+        .card {
+            height: 420px;
+            .card-img-top {
+                padding: 20px 20px 5px;
+                opacity: 0.7;
+            }
+            .card-body {
+                .card-title {
+                }
+                .gia-hover {
+                }
+                button {
+                    margin-top: 10px;
+                    margin-bottom: 5px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .card {
+        transition: 0.5s all;
+        
+        height: 400px;
+        .card-img-top {
+            transition: 0.5s all;
+            opacity: 1;
+        }
+        .card-body {
+            padding-bottom: 5px;
+            padding-top: 0px;
+            .card-title {
+                margin: 0px;
+                transition: 0.5s all;
+                margin-bottom: 10px;
+                margin-top: 5px;
+            }
+
+            .giamGia {
+                position: absolute;
+                top: 15px;
+                left: 25px;
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                padding-bottom: 4px;
+                color: rgb(255, 255, 255);
+                font-weight: 500;
+                width: 40px;
+                height: 36px;
+                background-image: url(https://frontend.tikicdn.com/_desktop-next/static/img/icons/product/deal-tag.png);
+                background-size: 40px 36px;
+                margin: 1px 0px 0px;
+                background-position: 0px 0px;
+            }
+            .new {
+                position: absolute;
+                top: -20px;
+                right: -18px;
+            }
+            .price {
+                display: flex;
+                .sellPrice {
+                    color: rgb(120, 120, 120);
+                    font-size: 13px;
+                    font-weight: 300;
+                    text-decoration: line-through;
+                    margin: 0;
+                    margin-left: 10px;
+                }
+                .gia-hover {
+                    opacity: 1;
+                    font-size: 1rem;
+                    margin-bottom: 0px;
+                }
+            }
+
+            button {
+                opacity: 0;
+                transition: 0.5s all;
+            }
+            .bottom {
+                .sellTime {
+                    .sell {
+                        display: flex;
+                        align-self: stretch;
+                        margin-top: 12px;
+                        .time {
+                            color: rgb(36, 36, 36);
+                            font-size: 12px;
+                            font-weight: 300;
+                            line-height: 18px;
+                            margin: 0px;
+                        }
+                        .products {
+                            position: relative;
+                            height: 18px;
+                            background-color: rgb(253, 218, 200);
+                            flex: 1 1 0%;
+                            border-radius: 9px;
+                            overflow: hidden;
+                            .width-sell {
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                width: 0px;
+                                height: 100%;
+                                background-color: rgb(253, 110, 35);
+                                z-index: 1;
+                            }
+                            .content-sell {
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                display: flex;
+                                -webkit-box-align: center;
+                                align-items: center;
+                                width: 100%;
+                                height: 100%;
+                                z-index: 2;
+                                padding: 0px 4px;
+                                span {
+                                    margin-bottom: 1px;
+                                    filter: brightness(0) invert(100%);
+                                }
+                                .text {
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 0px;
+                                    display: flex;
+                                    -webkit-box-pack: center;
+                                    justify-content: center;
+                                    -webkit-box-align: center;
+                                    align-items: center;
+                                    width: 100%;
+                                    height: 100%;
+                                    color: rgb(255, 255, 255);
+                                    font-size: 12px;
+                                    text-align: center;
+                                    margin: 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.card-phim {
+    &:hover {
+        .card {
+            .hinhAnh {
+                .bg {
+                    opacity: 1;
+                }
+                .button {
+                    z-index: 10;
+                    .center {
+                        .detail {
+                            opacity: 1;
+                        }
+                        .muaVe {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .card {
+        .hinhAnh {
+            position: relative;
+            .bg {
+                background: linear-gradient(to top, #0a2029, transparent 100%);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: 0.5s all;
+            }
+            .button {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                .center {
+                    margin-bottom: 20px;
+                    .detail {
+                        @include buttonPhim();
+
+                        border: 1px solid white;
+                    }
+                    .muaVe {
+                        @include buttonPhim();
+
+                        background: rgb(33, 146, 88);
+                    }
+                }
+            }
+        }
+    }
+}

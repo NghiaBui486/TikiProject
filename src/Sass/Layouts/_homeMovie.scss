@@ -1,0 +1,83 @@
+.carouselMovie{
+    /////// Button Carousel //////////////
+    .slick-slider{
+        margin-top: 30px;
+        .slick-prev{
+            &::before{
+                @include buttonCarousel();
+               
+            }
+         
+        }
+        .slick-next{
+            &::before{
+                @include buttonCarousel();
+               
+            }
+        }
+    }
+
+    ///////Heading Movie /////////////////
+
+    
+}
+.headingMovie{
+    display: block;
+    text-align: center;
+    padding-top: 50px;
+    margin: 24px 0px;
+    .title{
+        &::after{
+            position: absolute;
+    height: 1px;
+    bottom: -2px;
+    right: -50px;
+    content: "";
+    display: block;
+    width: 40px;
+    background: rgb(42, 45, 52);
+    border-radius: 80px;
+        }
+        &::before{
+            position: absolute;
+            height: 1px;
+             bottom: -2px;
+          content: "";
+         display: block;
+          width: 40px;
+          background: rgb(42, 45, 52);
+           border-radius: 80px;
+           left: -50px;
+        }
+        display: inline-flex;
+        -webkit-box-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        h3{
+            font-style: normal;
+             font-weight: bold;
+              font-size: 32px;
+             line-height: 40px;
+              color: rgb(45, 194, 117);
+             margin-bottom: 8px;
+              align-self: flex-end;
+              margin-right: -18px;
+        }
+        img{
+            align-self: flex-end;
+                 margin: 0px 8px;
+        }
+        .headingLine{
+            width: 100%;
+           position: absolute;
+          height: 1px;
+         bottom: -2px;
+          background: rgb(42, 45, 52);
+          border-radius: 80px;
+        }
+
+    }
+}

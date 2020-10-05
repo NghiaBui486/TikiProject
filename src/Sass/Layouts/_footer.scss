@@ -1,0 +1,162 @@
+.footer-custom_left {
+    position: relative;
+    padding-left: 70px;
+    &::before {
+        content: '';
+        background-image: url(../../asset/data/img/icon-contact-ft.svg);
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    .title {
+        h4 {
+            @include text($color-black-0, $fs-0, $fw-normal);
+            text-transform: uppercase;
+        }
+    }
+    .subtitle {
+        span {
+            @include subtext($color-black-0, $fs-1, $fw-normal);
+        }
+    }
+}
+
+.footer-custom_right {
+    position: relative;
+    .input-email {
+        width: 100%;
+        position: absolute;
+        height: 40px;
+        @include form ($pd-2, $border-radius_1);
+        outline: none;
+        border: none;
+        box-shadow: 0px 0px 10px #cccccc;
+    }
+    .submit-input {
+        position: absolute;
+        right: 0;
+        height: 40px;
+        width: 150px;
+        outline: none;
+        border: none;
+        @include buttonform($color-red-0, $color-white-0, $fs-2, $fw-bold-1, $border-radius_1);
+    }
+}
+
+.bg-footer_main {
+    background-color: #3d8dc9;
+    .footer-custom_link {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        .col-footer_link {
+            -ms-flex: 0 0 20%;
+            flex: 0 0 20%;
+            max-width: 20%;
+            @include pdfooter($pd-2);
+            .title {
+                h4 {
+                    @include text($color-white-0, $fs-0, $fw-bold-1);
+                }
+            }
+            .content {
+                ul {
+                    list-style: none;
+                    @include mrmainfooter($mg-0);
+                    li {
+                        display: inline-block;
+                        a {
+                            @include text($color-white-0, $fs-1, $fw-normal);
+                            margin-bottom: 11px;
+                            display: inline-block;
+                            text-decoration: none;
+                        }
+                        i.ic-footer {
+                            @include icon($color-white-0, $color-red-0, $border-radius_100, $fs-0, $line-height-1, $txt-center);
+                            width: 32px;
+                            height: 32px;
+                        }
+                        i.ic-footer_face {
+                            color: #3b5996;
+                        }
+                        span {
+                            width: 32px;
+                            height: 32px;
+                            @include imgicon($color-white-0, $txt-center, $line-height-1, $border-radius_100);
+                            display: inline-block;
+                        }
+                    }
+                }
+                p {
+                    @include mrmainfooter($mg-0);
+                    @include text($color-white-0, $fs-1, $fw-normal);
+                    a {
+                        color: #ffffff;
+                        text-decoration: none;
+                    }
+                }
+            }
+            .store {
+                h4 {
+                    @include text($color-white-0, $fs-1, $fw-bold-1);
+                }
+                img {
+                    @include mrmainfooter($mg-1);
+                }
+            }
+        }
+    }
+}
+
+.footer-custom_link {
+    @include bottompd($pd-3);
+    .address {
+        @include pdfooter($pd-2);
+        margin-left: 20px;
+        p {
+            @include mrmainfooter($mg-0);
+            @include text($color-black-0, $fs-1, $fw-normal);
+            line-height: 22px;
+        }
+    }
+}
+
+.coppyright-footer {
+    h5 {
+        @include text($color-black-0, $fs-1, $fw-bold-1);
+        @include mrmainfooter($mg-0);
+    }
+    p {
+        @include text($color-black-0, $fs-1, $fw-normal);
+    }
+}
+
+@include mediaQuery('medium') {
+
+.bg-footer_main {
+    .footer-custom_link {
+        .col-footer_link {
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.footer-custom_link {
+    .address {
+        margin-left: 0;
+    }
+}
+.footer-custom {
+    .rw-footer  {
+
+             }
+    }
+}

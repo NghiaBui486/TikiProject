@@ -1,0 +1,328 @@
+.header{
+    background: $bg-header;
+    .headerTop{
+        background: $bg-header-top;
+        .text-HeaderTop{
+            display: flex;
+            height: 100%;
+           -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+            a{
+                font-size: 12px;
+                color: rgb(255, 255, 255);
+                font-weight: 300;
+                line-height: 26px;
+                display: inline-flex;
+                letter-spacing: 0.5px;
+                -webkit-box-align: center;
+                align-items: center;
+                margin: 0px 0px 0px 25px;
+                text-decoration: none;
+                .tiki{
+                    width: 18px;
+                    height: 18px;
+                }
+                
+            }
+        }
+    }
+    .headerMid{
+        height: 100%;
+        display: flex;
+        position: relative;
+        z-index: 2;
+        padding: 9px 0px 16px;
+        
+        .midLeft{
+            .div{
+                margin-top: 11px;
+            }
+            display: flex;
+            flex: 1 1 0%;
+            .logo{
+                background: none;
+            }
+            .header-link{
+                .designButton{
+                    
+                    border: none;
+                    background: none;
+                    font-size: 12px;
+                    padding-top: 0;
+                }
+                float: right;
+                position: relative;
+                .item{
+                    color: #fff;
+                    font-size: 12px;
+                    padding: 14px 0 0 10px;
+                    position: relative;
+                    vertical-align: top;
+                    font-weight: 400;
+                    display: inline-block;
+                    letter-spacing: .9px;
+                    
+                }
+                .login{
+                    p{ 
+                        color: #fff;
+                       font-weight: 400;
+                       line-height: 14px;
+                        font-size: 12px;
+                        small{
+                            font-size: 11px;
+                            font-weight: 300;
+                        }
+                    }
+                    .dropdown-menu{
+                        .view{
+                            font-size: 11px;
+                            padding-left: 33px;
+                        }
+                    }
+                }
+                .header-cart{
+                    display: inline-block;
+                    margin-left: 15px;
+                    .item{
+                        border: 2px solid #fff;
+                        padding: 8px 11px 8px ;
+                        border-radius: 4px;
+                        margin-left: 0;
+                        letter-spacing: .7px;
+                        font-weight: 400;
+                        font-size: 13px;
+                        vertical-align: middle;
+                        i{
+                            padding-right: 10px;
+                            font-size: 20px;
+                            
+                        }
+                    }
+                }
+
+            }
+            .form-sreach{
+                margin-left: 20px;
+                flex: 1 1 0%;
+                .form-test{
+                    width: 100%;
+                    display: flex;
+                    
+                    position: relative;
+                    box-shadow: rgba(98, 98, 98, 0.5) 0px 1px 2px 0px;
+                    .input-test{
+                        font-size: 13px;
+                        border-width: 0px;
+                        border-style: initial;
+                        border-color: initial;
+                        border-image: initial;
+                        padding: 0px 8px;
+                        border-radius: 4px 0px 0px 4px;
+                        flex: 1 1 0%;
+                        outline: none;
+                    }
+                    .test{
+                        cursor: pointer;
+                        height: 40px;
+                        color: rgb(74, 74, 74);
+                        font-size: 14px;
+                        font-weight: 400;
+                        border-width: 0px;
+                        border-style: initial;
+                        border-color: initial;
+                        border-image: initial;
+                        line-height: 40px;
+                        padding: 0px 11px 0px 15px;
+                        background: rgb(237, 238, 242);
+                        border-radius: 0px 4px 4px 0px;
+                        outline: none;
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+    .headerBottom{
+        padding-bottom: 10px;
+        .menu{
+           
+            padding: 0;
+            button{
+                font-size: 13px;
+                padding: 0;
+            }
+            .showMenu{
+                position: absolute;
+                left: 0;
+                top: 50px;
+                z-index: 1000;
+                background: #fff;
+
+                box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+
+                .hover{
+                    background: white;
+                    position: relative;
+                    height: 35px;
+                    &:hover{
+                        
+                            background-color: #eceff1 !important;
+                    //    .showMenu{
+                    //        .menuRight{
+                    //         display: block;
+                    //     }
+                        
+                        &::after{
+                            margin-right: 4px;
+                            color: $bg-header;
+                            font-size: 16px;
+                            float: right;
+                              content: '>';
+                            font-style: normal;
+                        }
+                    }
+                }
+                .menuRight{
+                    display: block;
+                    position: absolute;
+                    left: 300px;
+                    width: 300px;
+                    padding: 8px 0 12px;
+                    top: 0;
+                    list-style: none;
+                    background: #fff;
+                    box-shadow: 0 0 4px 0 rgba(0,0,0,.25);
+                }
+            }
+        }
+        .viTri{
+                margin-top: 5px;
+                padding: 0;
+            .viTriGiaoHang{  
+                line-height: 2px;
+                font-size: 13px;
+                background: none;
+                border: none;
+                .fa-map-marker{
+                    
+                    width: 24px;
+                    height: 24px;
+                    margin-left: 10px;
+                }
+                span{
+                    color: white;
+                }
+            }
+            #giaoHang{
+                .modal-dialog{
+                    .modal-content{
+                        .modal-body{
+                            .button-sign {
+                                .text_sign {
+                                    @include text-sign($position, $mg-6, $mg-3, $txt-center);
+                                    align-self: stretch;
+                                    &::before {
+                                        content: '';
+                                        @include text-before($position-1, $border-2);
+                                        @include hoverCard($width-auto);
+                                        z-index: 0;
+                                        top: 9px;
+                                    }
+                                    p {
+                                        @include text_sign-title($fs-1, $mg-3, $pd-5, $pd-2, $bg-button);
+                                        z-index: 2;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                
+                .check-sign_form {
+                    padding-bottom: $pd-4;
+                }
+                
+                .form-sign_in {
+                    label {
+                        @include text($color-black-0, $font-size-3, $font-weight-2);
+                    }
+                }
+                
+                .form-sign_btn {
+                    display: $display-1;
+                    text-align: $txt-center;
+                }
+                
+                @include mediaQuery('medium') {
+                    .form-sign_in {
+                        .form-group {
+                            margin-bottom: $mg-1;
+                        }
+                    }
+                }
+            }
+        }
+        .sanPhamDaXem{
+            font-size: 13px;
+            padding-left: 15px;
+            padding-top:3px;
+            .ant-btn{
+                background: none;
+                border: none;
+                color: white;
+                padding: 0;
+                line-height: 2px;
+                font-size: 13px;
+                span{
+                    padding: 0;
+                }
+            }
+        }
+        .link{
+            padding: 0;
+            a{
+                font-size: 13px;
+
+                color: white;
+                padding-left: 10px;
+            }
+            img{
+                display: inline-block;
+                margin-right: 2px;
+                width: 62px;
+                height: 28px;
+            }
+        }
+    }
+}
+///////////////////// Sản phảm đã xem //////////////////@at-root
+.ant-popover{
+    width: 70%;
+    .ant-popover-content{
+        .ant-popover-arrow{
+
+        }
+        .ant-popover-inner{
+            .ant-popover-title{
+                text-align: center;
+            }
+            .ant-popover-inner-content{
+                text-align: center;
+
+                .row{
+                    
+                    .viewSanPham{
+                        color: rgba(0, 0, 0, 0.54);
+                        font-size: 14px;
+                        line-height: 1.43;
+                    }
+                }
+            }
+        }
+    }
+}

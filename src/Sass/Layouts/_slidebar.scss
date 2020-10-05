@@ -1,0 +1,106 @@
+.side-bar{
+    width: 253px;
+    float: left;
+    vertical-align: top;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    .panel{
+        border: none;
+        margin-bottom: 0;
+        margin-top: 0;
+        border-radius: 4px;
+       -webkit-box-shadow: none;
+        box-shadow: none;
+        ////// MENU /////////
+        .panel-content{
+            background: #fff;
+            .list-group{
+                .element{
+                    border: none;
+                    margin-bottom: 0;
+                    padding: 0;
+                    .item{
+                        font-size: 13px;
+                        color: #242424;
+                        padding: 5px 20px;
+                        padding-left: 34px;
+                        display: block;
+                        span{
+                            color: #595959;
+                        }
+                    }
+                }
+                .top{
+                    border: none;
+                    margin-bottom: 0;
+                    border-top: 1px solid #f5f6f7;
+                    padding: 0;
+                    font-size: 14px;
+                     .item{
+                          @include hoverDeteleLine();
+                          font-size: $font-size-3;
+                           color: #242424;
+                           padding: 5px 20px;
+                           font-weight: $font-weight-3;
+                           display: block;
+                           position: relative;
+                           border-radius: 0;
+                           span{
+                                color: #787878;
+                                font-size: 13px;
+                                font-weight: 400;
+                           }
+                      }
+                    }
+                
+                .element{
+                    font-size: 14px;
+                }
+            }
+        }
+        ////// TITLE /////////
+        .panel-heading{
+            padding: 0;
+            background: #fff;
+            border: none;
+            border-radius: 0;
+            .panel-title{
+
+                margin-top: 0;
+                font-size: 16px;
+                .panel-link{
+                    @include hoverDeteleLine();
+                    line-height: 20px;
+                    display: block;
+                    color: #000;
+                    font-size: 14px;
+                    padding: 18px 20px 10px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                }
+            }
+        }
+        ////// PRICE //////////
+        .panel-price{
+            padding-bottom: 15px;
+            .price-slide{
+                padding: 0 12px 5px 20px;
+                text-align: center;
+                z-index: 1;
+                .price-title{
+                    margin-bottom: 5px;
+                    font-size: 13px;
+                    text-align: left;
+                    color: #858585;
+                    font-weight: 300;
+                }
+                .from-input{
+                    .input{
+                        @include inputPrice()
+
+                    }
+                }
+            }
+        }
+    }
+}

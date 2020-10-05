@@ -1,0 +1,38 @@
+.content { 
+    overflow: hidden;
+    .option{
+        margin: 10px 20px;
+        padding-bottom: 0;
+        border-bottom: 1px solid #e1e1e1;
+        .text-sreach{
+            font-size: 24px;
+            font-weight: 300;
+            span{
+                font-size: 22px;
+                font-weight: 300;
+                color: #898989;
+            }
+        }
+        .button-option{
+            
+            .sort-list{
+                display: inline-block;
+                list-style: none;
+                 padding: 0;
+                 margin: 0;
+                 li{
+                    display: inline-block;
+                    font-size: 0;
+                    vertical-align: middle;
+                    a{
+                        font-weight: 400;
+                         color: #898989;
+                         padding: 9px 10px 11px;
+                          display: inline-block;
+                         font-size: 14px;
+                    }
+                 }
+            }
+        }
+    }
+}

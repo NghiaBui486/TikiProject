@@ -1,0 +1,284 @@
+.header-register {
+    .top-bar {
+        border-bottom: $border-top-1;
+        @include bottompd($pd-6);
+        .top-bar_text {
+            @include text($color-black-0, $font-size-3, $font-weight-2);
+        }
+        ul.infor-topbar {
+            @include topbar-seller($display-4, $list-style-1, $mg-3);
+            float: $float-1;
+            li {
+                @include pdfooter($pd-7);
+                @include text($color-black-0, $font-size-3, $font-weight-2);
+                a {
+                    text-decoration: none;
+                    @include text($color-black-0, $font-size-3, $font-weight-2);
+                    &:hover {
+                        color: $bgr-color-1;
+                    }
+                }
+            }
+        }
+    }
+    .middle-nav {
+        .nav-custom {
+            @include pdfooter($pd-5);
+            .nav-logo {
+                @include hoverCard($width-auto-2);
+                img {
+                    @include hoverCard($width-auto-9);
+                }
+            }
+            .nav-items_menu {
+                ul {
+                    li.nav-item {
+                        margin-right: $mg-7;
+                        a {
+                            @include text($color-black-0, $fs-1, $font-weight-2);
+                        }
+                        &:last-child {
+                            margin-right: $mg-3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.banner-landing {
+    @include bottompd($pd-3);
+    img.banner-landing_img {
+        max-width: $width-auto;
+        box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.07), 0 40px 50px -24px rgba(0, 0, 0, 0.12);
+    }
+    .step-count {
+        h3 {
+            @include hoverCard($width-auto);
+            @include text($color-black-0, $font-size-5, $font-weight-1);
+            text-align: $txt-center;
+            margin: 20px 0 48px;
+        }
+        .step {
+            text-align: $txt-center;
+            p.title-step {
+                margin: 32px 0 8px;
+                @include text($color-black-0, $fs-2, $font-weight-3);
+            }
+            p.content-step {
+                @include text($color-black-0, $fs-2, $font-weight-1);
+            }
+        }
+    }
+}
+
+.co-operate {
+    background-image: url(../../asset//data//img/step-banner.svg);
+    background-size: cover;
+    background-position: center;
+    @include hoverCard($width-auto);
+    padding: $pd-8 0;
+    h3.title-reason {
+        @include hoverCard($width-auto);
+        @include text($color-white-0, $font-size-5, $font-weight-1);
+        text-align: $txt-center;
+        margin-bottom: $mg-1;
+    }
+    .items-co-operate {
+        text-align: $txt-center;
+        p.title-reason_text {
+            @include text($color-white-0, $font-size-5, $fw-bold-1);
+            margin: $mg-3;
+            img {
+                @include hoverCard($width-auto-5);
+                display: $display-1;
+                margin: 0 auto;
+            }
+        }
+        p.content-reason_text {
+            @include text($color-white-0, $font-size-2, $font-weight-1);
+        }
+    }
+    .item-button {
+        .reason-button {
+            display: $display-1;
+            margin: 0 auto;
+            a {
+                margin-top: $mg-8;
+            }
+        }
+    }
+}
+
+.todo-custom {
+    padding: $pd-8 0;
+    .rw-title_todo {
+        h3.todo-custom_title {
+            @include hoverCard($width-auto);
+            @include text($color-black-0, $font-size-5, $font-weight-1);
+            text-align: $txt-center;
+            @include mrmainfooter($mg-8);
+        }
+    }
+    .rw-todo {
+        .form-todo {
+            padding: 18px 30px 0;
+            .todo {
+                box-shadow: 5px 10px 30px 0 rgba(1, 127, 255, 0.12);
+                padding: $pd-9;
+                @include text($color-black-0, $font-size-2, $font-weight-1);
+                border-radius: $border-radius_1;
+                -webkit-border-radius: $border-radius_1;
+                -moz-border-radius: $border-radius_1;
+                -ms-border-radius: $border-radius_1;
+                -o-border-radius: $border-radius_1;
+                .content-todo {
+                    font-weight: $font-weight-1;
+                }
+            }
+            .todo-guide {
+                box-shadow: 5px 10px 30px 0 rgba(1, 127, 255, 0.12);
+                padding: $pd-9;
+                @include text($color-white-0, $font-size-2, $font-weight-1);
+                background-color: $bg-header;
+                border-radius: $border-radius_1;
+                -webkit-border-radius: $border-radius_1;
+                -moz-border-radius: $border-radius_1;
+                -ms-border-radius: $border-radius_1;
+                -o-border-radius: $border-radius_1;
+            }
+        }
+    }
+    .item-button {
+        .reason-button {
+            display: $display-1;
+            margin: 0 auto;
+            a {
+                margin-top: $mg-8;
+            }
+        }
+    }
+}
+
+.inf-custom {
+    background-image: url(../../asset/data/img/background-info.jpg);
+    background-size: cover;
+    background-position: center;
+    @include hoverCard($width-auto);
+    padding: $pd-8 0;
+    h3.inf-custom_title {
+        @include hoverCard($width-auto);
+        @include text($color-white-0, $font-size-5, $font-weight-1);
+        text-align: $txt-center;
+        @include mrmainfooter($mg-8);
+    }
+    p {
+        @include text($color-white-0, $fs-0, $font-weight-2);
+    }
+    .item-button {
+        .reason-button {
+            display: $display-1;
+            margin: 0 auto;
+            a {
+                margin-top: $mg-8;
+            }
+        }
+    }
+}
+
+.footer-register {
+    .col-r1__logo {
+        text-align: $txt-center;
+    }
+    @include register-footer($color-black-0, $pd-border-1);
+    img {
+        @include hoverCard($width-auto);
+    }
+    span {
+        @include text($color-white-0, $fs-1, $font-weight-2);
+        text-transform: uppercase;
+        text-align: $txt-center;
+    }
+    ul {
+        list-style: $list-style-1;
+        @include text($color-white-0, $font-size-3, $font-weight-2);
+        margin: $mg-3;
+        a {
+            @include text($color-white-0, $font-size-3, $font-weight-2);
+            text-decoration: none;
+            &:hover {
+                color: $bgr-color-1;
+            }
+        }
+    }
+    .col-custom__text {
+        padding: $pd-8 0 0;
+        h3 {
+            @include text($color-white-0, $fs-1, $font-weight-2);
+            margin-bottom: $mg-6;
+        }
+        a {
+            margin-right: $mg-6;
+            &:last-child {
+                margin-right: $mg-3;
+            }
+        }
+    }
+}
+
+@include mediaQuery("medium") {
+    .header-register {
+        .middle-nav {
+            .nav-custom {
+                .nav-logo {
+                    @include hoverCard($width-logo);
+                    img {
+                        @include hoverCard($width-auto);
+                    }
+                }
+            }
+        }
+    }
+
+    .banner-landing {
+        img.banner-landing_img {
+            @include pdfooter($pd-4);
+        }
+        .step-count {
+            h3 {
+                font-size: $font-size-6;
+            }
+        }
+    }
+
+    .todo-custom {
+        .rw-title_todo {
+            h3.todo-custom_title {
+                font-size: $font-size-6;
+            }
+        }
+    }
+
+    .inf-custom {
+        h3.inf-custom_title {
+            font-size: 28px;
+        }
+        p {
+            @include pdfooter($pd-4);
+        }
+    }
+
+    .footer-register {
+        .col-r1__logo {
+            text-align: $txt-left;
+            margin-bottom: $mg-1;
+        }
+        .col-custom__text {
+            padding: $pd-2 $pd-2 0;
+            h3 {
+                margin-bottom: $mg-1;
+            }
+        }
+    }
+}

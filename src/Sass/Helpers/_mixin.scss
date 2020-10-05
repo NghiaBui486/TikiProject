@@ -1,0 +1,444 @@
+@mixin hoverCard($width) {
+    width: $width;
+}
+@mixin text($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+@mixin hoverDeteleLine() {
+    &:hover {
+        text-decoration: none;
+    }
+}
+@mixin inputPrice() {
+    width: 95px;
+    height: 30px;
+    padding: 0 8px;
+    background: #fff;
+    border-radius: 4px;
+    text-align: left;
+    border: 1px solid #b8b8b8;
+    outline: 0;
+    font-size: 13px;
+}
+@mixin buttonPhim() {
+    height: 40px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 24px;
+    width: 200px;
+    border-radius: 20px;
+    color: white;
+    opacity: 0;
+    transition: 0.5 all;
+}
+@mixin buttonCarousel() {
+    font-size: 20px;
+    height: 30px;
+    width: 30px;
+    color: black;
+}
+@mixin title() {
+    color: rgb(51, 51, 51);
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0px 0px 10px;
+}
+@mixin buttonSoLuong() {
+    cursor: pointer;
+    width: $width-button;
+    background-color: $bg-button;
+    border: $border-button;
+}
+@mixin hoverButtonSoLuong() {
+    background: $hover-bg-button;
+}
+@mixin subtext($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin form($pd-left, $border) {
+    padding-left: $pd-left;
+    border-radius: $border;
+    -webkit-border-radius: $border;
+    -moz-border-radius: $border;
+    -ms-border-radius: $border;
+    -o-border-radius: $border;
+}
+
+@mixin buttonform($bg, $color, $fs, $fw, $bd-r) {
+    background-color: $bg;
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    border-top-right-radius: $bd-r;
+    border-bottom-right-radius: $bd-r;
+}
+
+@mixin pdfooter($pad) {
+    padding-left: $pad;
+    padding-right: $pad;
+}
+
+@mixin mrmainfooter($mrg) {
+    margin-bottom: $mrg;
+}
+
+@mixin icon($bg, $color, $bdr, $fs, $lht, $txt-center) {
+    background-color: $bg;
+    color: $color;
+    border-radius: $bdr;
+    -webkit-border-radius: $bdr;
+    -moz-border-radius: $bdr;
+    -ms-border-radius: $bdr;
+    -o-border-radius: $bdr;
+    line-height: $lht;
+    font-size: $fs;
+    text-align: $txt-center;
+}
+
+@mixin imgicon($bg, $txt-center, $line-height-1, $border-radius_100) {
+    background-color: $bg;
+    text-align: $txt-center;
+    line-height: $line-height-1;
+    border-radius: $border-radius_100;
+    -webkit-border-radius: $border-radius_100;
+    -moz-border-radius: $border-radius_100;
+    -ms-border-radius: $border-radius_100;
+    -o-border-radius: $border-radius_100;
+}
+
+@mixin bottompd($pd-3) {
+    padding-top: $pd-3;
+    padding-bottom: $pd-3;
+}
+@mixin mrmainfooter($mrg) {
+    margin-bottom: $mrg;
+}
+@mixin mediaQuery($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get(
+            $map: $breakpoints,
+            $key: $screen,
+        );
+        @media screen and (max-width: $value) {
+            @content;
+        }
+    }
+    else {
+        @warn "`#($screen)` khong ton tai";
+    }
+}
+@mixin btn-search($height-1, $bgr-color-5, $font-size-4) {
+    height: $height-1;
+    background-color: $bgr-color-5;
+    font-size: $font-size-4;
+}
+@mixin danhmuc($list-style-1, $txt-center, $pd-4, $pd-5, $border-2, $fs-1) {
+    list-style: $list-style-1;
+    text-align: $txt-center;
+    padding-top: $pd-4;
+    padding-bottom: $pd-4;
+    padding-left: $pd-5;
+    padding-right: $pd-5;
+    border-top: $border-2;
+    border-bottom: $border-2;
+    font-size: $fs-1;
+}
+@mixin width-category($width-img-i, $height-a-img-i) {
+    width: $width-img-i;
+    height: $height-a-img-i;
+}
+@mixin card-items($border-3, $pd-4, $pd-2) {
+    border: $border-3;
+    padding: $pd-4 $pd-2;
+}
+@mixin text-form($pd-6, $mg-1, $border-1, $font-size-4, $width-2, $height-1) {
+    padding: $pd-6;
+    margin-top: $mg-1;
+    border: $border-1;
+    font-size: $font-size-4;
+    width: $width-2;
+    height: $height-1;
+}
+@mixin card-items($border-3, $pd-4, $pd-2) {
+    border: $border-3;
+    padding: $pd-4 $pd-2;
+}
+
+/*button đâng ky*/
+
+@mixin button($bg, $width-auto, $fs, $color, $pd-top-bot, $pd-right-left, $border-radius_1, $fw, $opac) {
+    background-color: $bg;
+    width: $width-auto;
+    font-size: $fs;
+    color: $color;
+    padding: $pd-top-bot $pd-right-left;
+    border-radius: $border-radius_1;
+    -webkit-border-radius: $border-radius_1;
+    -moz-border-radius: $border-radius_1;
+    -ms-border-radius: $border-radius_1;
+    -o-border-radius: $border-radius_1;
+    font-weight: $fw;
+    &:hover {
+        opacity: $opac;
+    }
+}
+@mixin share($width-2, $txt-center) {
+    text-align: $txt-center;
+    width: $width-2;
+}
+@mixin coloricon($color) {
+    color: $color;
+}
+@mixin star($po, $width, $height) {
+    position: $po;
+    width: $width;
+    height: $height;
+}
+@mixin barprogess($bg, $border-radius) {
+    background-color: $bg;
+    border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    -ms-border-radius: $border-radius;
+    -o-border-radius: $border-radius;
+}
+@mixin bar-custom($bg, $po, $height) {
+    background-color: $bg;
+    position: $po;
+    height: $height;
+}
+@mixin select-opt($bc, $pd-top-bot, $bd-right-left, $fs, $ol, $border-radius) {
+    border-color: $bc;
+    padding: $pd-top-bot $bd-right-left;
+    font-size: $fs;
+    &:focus {
+        outline: $ol;
+    }
+    border-radius: $border-radius;
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    -ms-border-radius: $border-radius;
+    -o-border-radius: $border-radius;
+}
+@mixin avatar-icon($color, $bg, $fs, $fw, $mg-auto, $border-radius_100) {
+    color: $color;
+    background-color: $bg;
+    font-size: $fs + 3;
+    font-weight: $fw;
+    margin-left: $mg-auto;
+    margin-right: $mg-auto;
+    border-radius: $border-radius_100;
+    -webkit-border-radius: $border-radius_100;
+    -moz-border-radius: $border-radius_100;
+    -ms-border-radius: $border-radius_100;
+    -o-border-radius: $border-radius_100;
+}
+@mixin text-sign($position, $mr-top-bot, $mr-right-left, $txt-center) {
+    position: $position;
+    margin: $mr-top-bot $mr-right-left;
+    -webkit-box-pack: $txt-center;
+    justify-content: $txt-center;
+}
+
+@mixin text-before($position-1, $border-2) {
+    position: $position-1;
+    border-bottom: $border-2;
+}
+
+@mixin text_sign-title($fs-1, $mg-3, $pd-top-bot, $pd-right-left, $bg-button) {
+    font-size: $fs-1;
+    margin: $mg-3;
+    padding: $pd-top-bot $pd-right-left;
+    background-color: $bg-button;
+}
+
+@mixin button-1($bg, $fs, $color, $pd-top-bot, $pd-right-left, $border-radius_1, $fw, $opac) {
+    background-color: $bg;
+    font-size: $fs;
+    color: $color;
+    padding: $pd-top-bot $pd-right-left;
+    border-radius: $border-radius_1;
+    -webkit-border-radius: $border-radius_1;
+    -moz-border-radius: $border-radius_1;
+    -ms-border-radius: $border-radius_1;
+    -o-border-radius: $border-radius_1;
+    font-weight: $fw;
+    &:hover {
+        opacity: $opac;
+        color: $color;
+    }
+}
+@mixin img-infor_account($width-img, $border-radius_50, $mg-1) {
+    width: $width-img;
+    border-radius: $border-radius_50;
+    -webkit-border-radius: $border-radius_50;
+    -moz-border-radius: $border-radius_50;
+    -ms-border-radius: $border-radius_50;
+    -o-border-radius: $border-radius_50;
+    margin-right: $mg-1;
+}
+////////////// THANH TOAN //////////////////
+
+@mixin progressbar($width-auto-10, $position) {
+    width: $width-auto-10;
+    position: $position;
+}
+
+@mixin bar-custom($position, $mg-9, $hover-bg-button) {
+    position: $position;
+    margin: $mg-9;
+    background-color: $hover-bg-button;
+}
+
+@mixin circle-number(
+    $position-1,
+    $width-number,
+    $height-number,
+    $display-1,
+    $bg-sreach,
+    $border-radius_50,
+    $fs-0,
+    $txt-center,
+    $color-white-0,
+    $mg-circle
+) {
+    position: $position-1;
+    width: $width-number;
+    height: $height-number;
+    display: $display-1;
+    background-color: $bg-sreach;
+    border-radius: $border-radius_50;
+    -webkit-border-radius: $border-radius_50;
+    -moz-border-radius: $border-radius_50;
+    -ms-border-radius: $border-radius_50;
+    -o-border-radius: $border-radius_50;
+    font-size: $fs-0;
+    text-align: $txt-center;
+    color: $color-white-0;
+    margin-top: $mg-circle;
+    margin-left: $mg-circle;
+}
+
+@mixin address-list($position, $bg-button, $border-auto, $pd-top-bot, $pd-right-left, $border-radius_1) {
+    position: $position;
+    background-color: $bg-button;
+    border: $border-auto;
+    padding: $pd-top-bot $pd-right-left;
+    border-radius: $border-radius_1;
+    -webkit-border-radius: $border-radius_1;
+    -moz-border-radius: $border-radius_1;
+    -ms-border-radius: $border-radius_1;
+    -o-border-radius: $border-radius_1;
+}
+
+@mixin defaut-title($position-1, $display-1, $fs-0, $color-defaut-title) {
+    position: $position-1;
+    display: $display-1;
+    font-size: $fs-0;
+    color: $color-defaut-title;
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+@mixin topbar-seller($display-4, $list-style-1, $mg-3) {
+    display: $display-4;
+    list-style: $list-style-1;
+    margin: $mg-3;
+}
+
+@mixin button-2($bg, $fs, $color, $pd-top-bot, $pd-right-left, $border-radius_1, $fw, $border-bottom) {
+    background-color: $bg;
+    font-size: $fs;
+    color: $color;
+    padding: $pd-top-bot $pd-right-left;
+    border-radius: $border-radius_1;
+    -webkit-border-radius: $border-radius_1;
+    -moz-border-radius: $border-radius_1;
+    -ms-border-radius: $border-radius_1;
+    -o-border-radius: $border-radius_1;
+    font-weight: $fw;
+    border: $border-bottom;
+    &:hover {
+        color: $color;
+    }
+}
+
+@mixin register-footer($bg, $pd-border-1) {
+    background-color: $bg;
+    padding: $pd-border-1;
+}
+@mixin bg-container($bg-header){
+    background: $bg-header;
+}
+
+@mixin table-doitra($txt-center, $text-transform-1, $border-color, $border-top-1) {
+    text-align: $txt-center;
+    text-transform: $text-transform-1;
+    border-color: $border-color;
+    border-top: $border-top-1;
+}
+
+@mixin text-doitra($color, $fs, $fw, $txt-center, $text-transform-1) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+    text-align: $txt-center;
+    text-transform: $text-transform-1;
+}
+
+@mixin text-mr($mg-8) {
+    margin-top: $mg-8;
+    margin-bottom: $mg-8;
+}
+
+@mixin mr-card($mg-10) {
+    margin-top: $mg-10;
+}
+
+@mixin br-card($border-auto-1, $border-radius_3) {
+    border: $border-auto-1;
+    border-radius: $border-radius_3;
+    -webkit-border-radius: $border-radius_3;
+    -moz-border-radius: $border-radius_3;
+    -ms-border-radius: $border-radius_3;
+    -o-border-radius: $border-radius_3;
+}
+
+@mixin tablet {
+  @media only screen and (max-width: #{$desktop-width }) and (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mediaQuery-1($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media screen and (min-width: $value) {
+            @content;
+        }
+    }
+    else {
+        @warn "`#($screen)` khong ton tai";
+    }
+}
+
+@mixin mediaQuery-2($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+        @media only screen and (max-width: $value) {
+            @content;
+        }
+    }
+    else {
+        @warn "`#($screen)` khong ton tai";
+    }
+}
+

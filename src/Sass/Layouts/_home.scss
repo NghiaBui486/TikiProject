@@ -1,0 +1,95 @@
+.danhMuc{
+    h2{
+        @include title();
+        
+    }
+    .row{
+        .elementDanhMuc{
+            width: 25%;
+            height: 100%;
+            padding: 10px;
+            .rowDanhMuc{
+                &:hover{
+                    text-decoration: none;
+                }
+                background-color: rgb(255, 255, 255);
+                .image{
+                    padding: 5px;
+                    margin:auto;
+                    display: flex;
+                   -webkit-box-pack: center;
+                      justify-content: center;
+                  -webkit-box-align: center;
+                    align-items: center;
+                   width: 96px;
+                  height: 96px;
+                  img{
+                    width: 100%;
+                  }
+                }
+                p{
+                    margin-top : 15px
+                }
+            }
+        }
+    }
+}
+.Sclick {
+    margin: 40px 0;
+    h2{
+        @include title();
+    }
+    .element{
+        &:hover{
+            opacity: 70%;
+            .keywords{
+                text-decoration: none;
+            }
+        }
+        height: 100%;
+        padding: 8px;
+        transition: 0.5s all;
+        .keywords{
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+            height: 100%;
+            color: rgb(68, 68, 68);
+            font-size: 13px;
+            line-height: 20px;
+            background-color: rgb(225, 225, 225);
+            padding: 16px;
+            border-radius: 4px;
+            p{
+                color: white;
+            }
+        }
+    }
+}
+.testHinh{
+    position: relative;
+    .slick-slider{
+        // .slick-prev{
+        //     &::before{
+        //         @include buttonCarousel();
+               
+        //     }
+         
+        // }
+        // .slick-next{
+        //     &::before{
+        //         @include buttonCarousel();
+               
+        //     }
+        // }
+    }
+    .position{
+        position: absolute;
+        left: 10%;
+        top: 0;
+        z-index: 10;
+    }
+}

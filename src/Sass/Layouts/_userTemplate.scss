@@ -1,0 +1,53 @@
+.bg-infomation {
+    background-color: $bgr-color-6;
+    padding: 15px 0;
+    .account-infor {
+        .account-infor_name {
+            margin-bottom: $mg-1;
+            img.img-avatar {
+                @include img-infor_account($width-img, $border-radius_50, $mg-1);
+            }
+            .info {
+                strong {
+                    display: block;
+                    @include text($color-black-0, $font-size-4, $font-weight-2);
+                }
+            }
+        }
+        ul.infor-item {
+            list-style: none;
+            li {
+                align-items: $txt-center;
+                height: 38px;
+                display: flex;
+                a {
+                    text-decoration: none;
+                    color: $color-account;
+                    align-items: $txt-center;
+                    svg {
+                        @include width-category($width-img-svg, $height-img-svg);
+                        margin-right: 20px;
+                    }
+                    img {
+                        @include width-category($width-img-svg, $height-img-svg);
+                        margin-right: 20px;
+                    }
+                    span {
+                        @include text($color-account, $font-size-3, $font-weight-2)
+                    }
+                }
+                &:hover {
+                    background-color: $bgr-color-7;
+                }
+            }
+            li.active-items {
+                background-color: $bgr-color-7;
+            }
+        }
+    }
+    .form-infor_update {
+        h3 {
+            @include text($color-black-0, $font-size-icon-star, $font-weight-2);
+        }
+    }
+}

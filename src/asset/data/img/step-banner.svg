@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="528" viewBox="0 0 1600 528">
+    <defs>
+        <linearGradient id="b" x1="0%" y1="0%" y2="100%">
+            <stop offset="0%" stop-color="#250F8A"/>
+            <stop offset="100%" stop-color="#02ECF1"/>
+        </linearGradient>
+        <path id="a" d="M0 0h1600v528H0z"/>
+        <linearGradient id="d" x1="100%" x2="0%" y1="50%" y2="50%">
+            <stop offset="0%" stop-color="#FFF" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#FFF"/>
+            <stop offset="100%" stop-color="#FFF"/>
+        </linearGradient>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="c" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="url(#b)" xlink:href="#a"/>
+        <g mask="url(#c)">
+            <g fill="url(#d)" transform="translate(0 -472)">
+                <rect width="60.913" height="12.4" x="406.02" y="703.398" opacity=".1" rx="6.2" transform="rotate(-30 436.476 709.598)"/>
+                <rect width="100" height="20.358" x="251.391" y="483.636" opacity=".2" rx="10.179" transform="rotate(-30 301.39 493.815)"/>
+                <rect width="841.942" height="171.399" x="-13.55" y="199.004" opacity=".1" rx="85.699" transform="rotate(-30 407.421 284.703)"/>
+                <rect width="841.942" height="171.399" x="1203.45" y="559.004" opacity=".1" rx="85.699" transform="rotate(-30 1624.421 644.703)"/>
+                <g transform="translate(1179 350)">
+                    <rect width="120" height="15" x="396.712" y="372.995" opacity=".4" rx="7.5" transform="rotate(-30 456.712 380.495)"/>
+                    <rect width="60.913" height="12.4" x="-.98" y="394.398" opacity=".2" rx="6.2" transform="rotate(-30 29.476 400.598)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,13 @@
+.form-fields {
+    .input-text {
+        @include text-form($pd-6, $mg-1, $border-1, $font-size-4, $width-2, $height-1);
+        border-top-left-radius: 5px 10px;
+        border-bottom-left-radius: 5px 10px;
+    }
+    .btn-search_form {
+        margin-bottom: 4px;
+        @include btn-search($height-1, $bgr-color-5, $font-size-4);
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

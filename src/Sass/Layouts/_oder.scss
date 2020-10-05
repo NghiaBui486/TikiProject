@@ -1,0 +1,226 @@
+.oder{
+    .header-shipping {
+        padding: 25px 0 15px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px;
+        background-color: $bg-button;
+        .header-col {
+            display: flex;
+            .logo {
+                flex: 1 1 0%;
+                align-items: $txt-center;
+                .logo-shipping {
+                    img {
+                        @include hoverCard($width-auto);
+                    }
+                }
+            }
+            .progress_custom {
+                .bar-progress_1 {
+                    .text {
+                        @include text($color-black-0, $fs-3, $font-weight-2);
+                        text-align: $txt-center;
+                    }
+                    @include progressbar($width-auto-10, $position);
+                    .progress_bar {
+                        height: 6px;
+                        @include bar-custom($position, $mg-9, $hover-bg-button);
+                        .fill-color {
+                            transition: none 0s ease 0s;
+                            box-shadow: none;
+                            @include width-category($width-auto-5, $height-2);
+                            background-color: $bg-sreach;
+                        }
+                    }
+                    &:first-child {
+                        .progress_bar {
+                            left: 50%;
+                            width: $width-auto-5;
+                            .fill-color {
+                                @include hoverCard($width-auto);
+                            }
+                        }
+                    }
+                    .circle {
+                        @include circle-number($position-1, $width-number, $height-number, $display-1, $bg-sreach, $border-radius_50, $fs-0, $txt-center, $color-white-0, $mg-circle);
+                        line-height: 26px;
+                        box-shadow: rgb(102, 102, 102) 0px 0px 2px;
+                        border: none;
+                        top: 48px;
+                        left: 50%;
+                    }
+                }
+                .bar-progress_2 {
+                    .text {
+                        @include text($color-black-0, $fs-3, $font-weight-2);
+                        text-align: $txt-center;
+                    }
+                    @include progressbar($width-auto-10, $position);
+                    .progress_bar {
+                        height: 6px;
+                        @include bar-custom($position, $mg-9, $hover-bg-button);
+                        .fill-color {
+                            transition: none 0s ease 0s;
+                            box-shadow: none;
+                            @include width-category($width-auto-5, $height-2);
+                            background-color: $bg-sreach;
+                        }
+                    }
+                    &:first-child {
+                        .progress_bar {
+                            left: 50%;
+                            width: $width-auto-5;
+                            .fill-color {
+                                @include hoverCard($width-auto);
+                            }
+                        }
+                    }
+                    .circle {
+                        @include circle-number($position-1, $width-number, $height-number, $display-1, $bg-sreach, $border-radius_50, $fs-0, $txt-center, $color-white-0, $mg-circle);
+                        line-height: 26px;
+                        box-shadow: rgb(102, 102, 102) 0px 0px 2px;
+                        border: none;
+                        top: 48px;
+                        left: 50%;
+                    }
+                }
+                .bar-progress_3 {
+                    .text {
+                        @include text($color-black-0, $fs-3, $font-weight-2);
+                        text-align: $txt-center;
+                    }
+                    @include progressbar($width-auto-10, $position);
+                    .progress_bar {
+                        height: 6px;
+                        @include bar-custom($position, $mg-9, $hover-bg-button);
+                        .fill-color {
+                            transition: none 0s ease 0s;
+                            box-shadow: none;
+                            @include width-category($width-auto-5, $height-2);
+                        }
+                    }
+                    &:last-child {
+                        .progress_bar {
+                            width: $width-auto-5;
+                        }
+                    }
+                    .circle {
+                        @include circle-number($position-1, $width-number, $height-number, $display-1, $bg-button, $border-radius_50, $fs-0, $txt-center, $color-black-0, $mg-circle);
+                        line-height: 26px;
+                        box-shadow: rgb(102, 102, 102) 0px 0px 2px;
+                        border: none;
+                        top: 48px;
+                        left: 50%;
+                    }
+                }
+            }
+            .hotline {
+                align-items: $txt-center;
+            }
+        }
+    }
+    
+    .main-address {
+        background-color: $bgr-color-5;
+        .main-address_text {
+            h3.title {
+                @include text($color-black-0, $fs-0, $fw-bold-1);
+                margin-top: $mg-7;
+            }
+            p.text {
+                @include text($color-black-0, $fs-0, $font-weight-3);
+            }
+            .address-text_list {
+                @include address-list($position, $bg-button, $border-auto, $pd-4, $pd-2, $border-radius_1);
+                p.name {
+                    @include text($color-black-0, $font-size-3, $fw-bold-1);
+                }
+                p {
+                    @include text($color-black-0, $font-size-3, $font-weight-2);
+                    margin-bottom: $mg-5;
+                }
+                p.button {
+                    margin-top: $mg-1;
+                }
+                .defaut-title {
+                    @include defaut-title($position-1, $display-1, $font-size-1, $color-defaut-title);
+                    top: 10px;
+                    right: 15px;
+                }
+            }
+            p.title-address_custom {
+                @include text($color-black-0, $font-size-3, $font-weight-2);
+                @include bottompd($pd-3);
+                margin-bottom: $mg-3;
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    
+    .footer-shipping {
+        background-color: $bgr-color-5;
+        margin-top: $mg-8;
+        padding: $pd-4 0;
+        p {
+            margin-bottom: $mg-3;
+            @include text($color-black-0, $font-size-3, $font-weight-2);
+        }
+        p.term {
+            a {
+                @include text($color-black-0, $font-size-3, $font-weight-2);
+                text-decoration: none;
+            }
+        }
+    }
+    
+    @include mediaQuery('medium') {
+        .header-shipping {
+            .header-col {
+                .progress_custom {
+                    margin-bottom: $mg-1;
+                    .bar-progress_1 {
+                        .text {
+                            font-size: 10px;
+                        }
+                        .circle {
+                            top: 40px;
+                        }
+                    }
+                    .bar-progress_2 {
+                        .text {
+                            font-size: 10px;
+                        }
+                        .circle {
+                            top: 40px;
+                        }
+                    }
+                    .bar-progress_3 {
+                        .text {
+                            font-size: 10px;
+                        }
+                        .circle {
+                            top: 40px;
+                        }
+                    }
+                }
+                .hotline {
+                    img {
+                        display: $display-1;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
+    
+        .main-address {
+            .main-address_text {
+                @include pdfooter($pd-3);
+            }
+        }
+    
+        .footer-shipping {
+            margin-top: $mg-1;
+        }
+    }
+}

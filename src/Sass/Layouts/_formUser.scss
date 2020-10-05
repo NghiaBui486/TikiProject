@@ -1,0 +1,41 @@
+.formUser{
+    .add__account-form {
+        label {
+            @include hoverCard($width-auto-2);
+            @include text($color-black-0, $font-size-3, $font-weight-2);
+            float: left;
+            line-height: 30px;
+        }
+        input {
+            @include hoverCard($width-auto-3);
+            float: left;
+            margin-bottom: $mg-1;
+        }
+    }
+    .add__account-form-number {
+        label {
+            @include hoverCard($width-auto-2);
+            @include text($color-black-0, $font-size-3, $font-weight-2);
+            float: left;
+            line-height: 30px;
+        }
+        input {
+            @include hoverCard($width-auto-5);
+            float: left;
+            margin-bottom: $mg-1;
+        }
+        a {
+            text-decoration: none;
+            @include hoverCard($width-auto-8);
+            @include icon($color-icon-header, $color-black-0, $border-radius_0, $font-size-1, $line-height-2, $txt-center);
+            @include bottompd($pd-7);
+            float: left;
+            line-height: 30px;
+        }
+    }
+    .add__account-form-check {
+        label {
+            @include text($color-black-0, $font-size-3, $font-weight-2);
+        }
+    }
+}
