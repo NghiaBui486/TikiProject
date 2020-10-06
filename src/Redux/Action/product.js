@@ -24,6 +24,21 @@ export const DanhSachDanhMucCon = (id) =>{
     }
 }
 export const SaveDanhMucCon = (id) =>{
+    if(id === undefined){
+        ProductsService.danhMucSanPham().then(res=>{
+            id = res.data.data[0]._id
+            return dispatch => {
+                console.log(id)
+                ProductsService.danhSachDanhMucCon(id).then(res => {
+                    dispatch(createAction(SAVEDANHMUCCON,res.data.data))
+                }).catch(err=>{
+                    console.log(err);
+                })
+            }
+        }).catch(err=>{
+            console.log(err);
+        })
+    }
     return dispatch => {
         ProductsService.danhSachDanhMucCon(id).then(res => {
             dispatch(createAction(SAVEDANHMUCCON,res.data.data))
