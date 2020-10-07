@@ -1,5 +1,5 @@
 import { act } from "react-dom/test-utils"
-import { CHITIETSANPHAM, DANHMUCSANPHAM, DANHSACHDANHMUCCON, DANHSACHSANPHAM, DANHSACHSANPHAMDAXEM, DANHSACHSANPHAMPHANTRANG, FLAG, KEYWORD, SAVEDANHMUCCON, SREACHAZ, SREACHDANHMUC, SREACHPRICE, SREACHPRODUCTAPI, SREACHSANPHAMDANHMUCCON, SREACHTHEODANHMUC, SREACHZA, THONGTINSANPHAM } from "../Action/type"
+import { CHITIETSANPHAM, DANHMUCSANPHAM, DANHSACHDANHMUCCON, DANHSACHSANPHAM, DANHSACHSANPHAMDAXEM, DANHSACHSANPHAMPHANTRANG, FLAG, KEYWORD, SAVEDANHMUCCON, SREACHAZ, SREACHDANHMUC, SREACHPRICE, SREACHPRODUCTAPI, SREACHSANPHAMDANHMUCCON, SREACHTHEODANHMUC, SREACHZA, THONGTINSANPHAM, DANHSACHSANPHAMSHOP } from "../Action/type"
 
 const initialState = {
     danhSachSanPham: [],
@@ -20,6 +20,7 @@ const initialState = {
     saveDanhMucCon: [],
     sreachSanPhamDanhMucCon: [],
     danhSachSanPhamDaXem: [],
+    danhSachSanPhamShop: [],
 
 }
 const productReducers = (state = initialState, action) => {
@@ -88,6 +89,9 @@ const productReducers = (state = initialState, action) => {
             return { ...state }
         case DANHSACHSANPHAMDAXEM:
             state.danhSachSanPhamDaXem = action.payload
+            return { ...state }
+        case DANHSACHSANPHAMSHOP:
+            state.danhSachSanPhamShop = action.payload
             return { ...state }
         default:
             return { ...state }

@@ -23,24 +23,11 @@ export const DanhSachDanhMucCon = (id) =>{
         })
     }
 }
-export const SaveDanhMucCon = (id) =>{
-    if(id === undefined){
-        ProductsService.danhMucSanPham().then(res=>{
-            id = res.data.data[0]._id
-            return dispatch => {
-                console.log(id)
-                ProductsService.danhSachDanhMucCon(id).then(res => {
-                    dispatch(createAction(SAVEDANHMUCCON,res.data.data))
-                }).catch(err=>{
-                    console.log(err);
-                })
-            }
-        }).catch(err=>{
-            console.log(err);
-        })
-    }
+export const SaveDanhMucCon = (id = "5f60727110312900173437a0") =>{
+
     return dispatch => {
         ProductsService.danhSachDanhMucCon(id).then(res => {
+            console.log(id)
             dispatch(createAction(SAVEDANHMUCCON,res.data.data))
         }).catch(err=>{
             console.log(err);
@@ -201,7 +188,8 @@ export const SreachTheoDanhMucCon = (id) =>{
     
 }
 
-export const DanhSachSanPhamShop = (token) =>{
+export const DanhSachSanPhamShop = (token = "5f769f88b3f91149cae757e0") =>{
+    console.log("Token.............",token)
     return dispatch =>{
         ProductsService.danhSachSanPhamShop(token).then(res=>{
             dispatch(createAction(DANHSACHSANPHAMSHOP,res.data))

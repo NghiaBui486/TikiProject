@@ -125,6 +125,9 @@ class index extends Component {
                     value.ImageList.push(value.Image)
                     console.log("Dữ liệu gửi đi: ",value)
                     ThemSanPham(value)
+                    setTimeout(()=> {
+                        this.props.history.push('/adminbanhang/sanpham')
+                    }, 2000);
                 }}
                     initialValues={{
 
