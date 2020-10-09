@@ -149,6 +149,37 @@ class productsServices {
         })
     }
 
+    danhSachSanPhamShopSearch(token, keysearch){
+        if(keysearch || keysearch !== ''){
+            console.log(keysearch)
+            return axios({
+                url : `${APILink}api/product/shop/search`,
+                method : `GET`,
+                params: {
+                    search: keysearch},            
+                headers: {
+                    'Access-Control-Allow-Methods': 'GET,PUT,PATCH,POST,DELETE',
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    'Authorization': token,  
+                }
+            })
+        }
+        else{
+            console.log('Key search',keysearch)
+            return axios({
+                url : `${APILink}api/product/shop/search`,
+                method : `GET`,         
+                headers: {
+                    'Access-Control-Allow-Methods': 'GET,PUT,PATCH,POST,DELETE',
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    'Authorization': token,  
+                }
+            })
+        }
+    }
+
 }
 export default productsServices
 
