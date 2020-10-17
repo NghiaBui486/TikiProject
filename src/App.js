@@ -20,6 +20,7 @@ import DangNhapBanHang from './Component/AdminBanHang/DangNhapBanHang';
 import DangKyBanHang from './Component/AdminBanHang/FormDangKy';
 import ShopSanPham from './Component/AdminBanHang/ShopSanPham';
 import ThemSanPhamBanHang from './Component/AdminBanHang/ShopSanPham/ThemSanPham';
+import CapNhatSanPhamBanHang from './Component/AdminBanHang/ShopSanPham/CapNhatSanPham';
 import DonHang from './Component/AdminUser/DonHang';
 import QuanLyDonHangCom from './Component/AdminUser/QuanLyDonHang';
 import ChiTietPhim from './Component/ChiTietPhim';
@@ -104,6 +105,7 @@ class App extends Component {
             <UserTemplate path="/diachi" exact Component={AddDiaChi} />
             <AdminBanHangTemplate path="/adminbanhang/trangchu" exact Component={TrangChuAdmin} />
             <AdminBanHangTemplate path="/adminbanhang/themsanpham" exact Component={ThemSanPhamBanHang} />
+            <AdminBanHangTemplate path="/adminbanhang/capnhat/:id" exact Component={CapNhatSanPhamBanHang} />
             <UserTemplate path="/user/quanlydonhang" exact Component={QuanLyDonHangCom} />
             <UserTemplate path="/user/thongtindonhang/:_id" exact Component={DonHang} />
             <UserTemplate path="/user/nhanxetcuatoi" exact Component={NhanXetCuaToi} />
@@ -138,6 +140,7 @@ class App extends Component {
             <AdminBanHangTemplate path="/adminbanhang/trangchu" exact Component={TrangChuAdmin} />
             <AdminBanHangTemplate path="/adminbanhang/sanpham" exact Component={ShopSanPham} />
             <AdminBanHangTemplate path="/adminbanhang/themsanpham" exact Component={ThemSanPhamBanHang} />
+            <AdminBanHangTemplate path="/adminbanhang/capnhat/:id" exact Component={CapNhatSanPhamBanHang} />
             <HomeTemplate path="/test" exact Component={Test} />
             <HomeTemplate path="/chitietsanpham/:id" exact Component={ChiTietSanPham} />
             <HomeTemplate path="/movie" exact Component={HomeMovie} />

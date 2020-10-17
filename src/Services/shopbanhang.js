@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { linkAPI } from './routeAPI'
 // const APICor = `https://cors-anywhere.herokuapp.com/`
-const APILink = `http://103.130.214.106:3005/`
+const APILink = linkAPI
 
 ///////////// localhost:4000 https://cors-anywhere.herokuapp.com/ https://marketplacedata.herokuapp.com/
 class shopBanHangServices {

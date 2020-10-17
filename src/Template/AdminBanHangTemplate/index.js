@@ -22,7 +22,7 @@ const LayoutAdmin = (props) => {
                 <div className="logo text-white text-center pt-1" >
                     Sller Center
                 </div>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['3']}>
                     <Menu.Item key="1" icon={<BarChartOutlined />}>
                         <NavLink to="/">Trang Chủ</NavLink>
                     </Menu.Item>

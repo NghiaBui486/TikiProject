@@ -1,5 +1,5 @@
 import { LoadingOutlined, SmileOutlined } from '@ant-design/icons';
-import { Steps } from 'antd';
+import { Steps, Spin } from 'antd';
 import React, { Component } from 'react';
 
 class index extends Component {

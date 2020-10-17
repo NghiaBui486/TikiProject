@@ -1,17 +1,21 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as yup from 'yup';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Spin } from 'antd';
 import { ProductsService } from '../../../Services';
 import { DANHSACHSANPHAMSHOP } from '../../../Redux/Action/type';
-import { DanhSachSanPhamShop } from '../../../Redux/Action/product';
-import { createAction } from '../../../Redux/Action';
+import { DanhSachSanPhamShop } from '../../../Redux/Action/product';import { createAction } from '../../../Redux/Action';
+
+
 class index extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            danhSachSanPhamShop: null
+            danhSachSanPhamShop: null,
+            keysearch: ""
         }
     }
     // Nhận state danh sách sản phẩm
@@ -62,10 +66,34 @@ class index extends Component {
         })
     }
 
+    // Giá thay đổi
+    onClickChangemaxPrice = (e) => 
+    {
+        const { name, value } = e.target
+        this.setState({
+            [name]: value
+        })
+        if(this.state.keysearch){
+            ProductsService.danhSachSanPhamShopSearch(JSON.parse(localStorage.getItem('banHang')).token, this.state.keysearch, value).then(res => {
+                this.setState({
+                    danhSachSanPhamShop: res.data.data.products,
+                })
+                console.log("Key search: ",this.state.keysearch, "maxPrice", value)
+            });
+        }
+    }
+    // Blur thay đổi
+    handleBlurKeySearch = (e) =>
+    {
+        const { name, value } = e.target
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
         // Render danh sách sản phẩm
         if (this.state.danhSachSanPhamShop) {
-            var elementrenderDanhSachSanPham;
             const elementDanhSachSanPhamShop = this.state.danhSachSanPhamShop.map((item, index) => {
                 return (
                     <tr key={index}>
@@ -81,6 +109,7 @@ class index extends Component {
                     </tr>
                 )
             })
+            
             return (
                 <div>
                     <div className="container">
@@ -92,24 +121,43 @@ class index extends Component {
                             <div className="col-md-auto"  style={{"marginLeft": "-12.5px", "marginTop": "5px"}}>
                             <Formik
                                 initialValues={{
-                                    keysearch: ''
+                                    maxPrice: "100000000000",
+                                    keysearch: ""
                                 }}
                                 onSubmit={(values) => {
-                                    console.log(values)
-                                    if(values.keysearch != ''){
-                                        console.log(values.keysearch)
-                                        ProductsService.danhSachSanPhamShopSearch(JSON.parse(localStorage.getItem('banHang')).token, values.keysearch).then(res => {
+                                    if(values.keysearch === "")
+                                    {
+                                        Swal.fire({
+                                            position: 'center',
+                                            icon: 'error',
+                                            title: "Vui lòng nhập từ khóa tìm kiếm",
+                                            showConfirmButton: false,
+                                            showCancelButton: true,
+                                            timer: 1200
+                                        });
+                                    }
+                                    else{
+                                        ProductsService.danhSachSanPhamShopSearch(JSON.parse(localStorage.getItem('banHang')).token, values.keysearch, values.maxPrice).then(res => {
                                             this.setState({
                                                 danhSachSanPhamShop: res.data.data.products,
                                                 keysearch : values.keysearch
                                             })
                                         });
                                     }
-                                }}>
-
-                                {({ values }) => (
+                                }}
+                                >
+                                {(formikProps) => (
                                     <Form >
-                                        <Field style={{ width: "300px", "border": "none","fontSize": "14px" }} type="text" name="keysearch" className="form-control" placeholder="Từ khóa tìm kiếm"></Field>
+                                        {/* <a className="btn btn-success" style={{ marginRight: "5px" }} href='sanpham'>Xem tất cả</a> */}
+                                        <label htmlFor="maxPrice" style={{ padding:'5px', background: '#f0f5f5', marginRight:'5px', "borderRadius": "5px" }}> Khoảng giá: </label>
+                                        <Field className="form-control" name="maxPrice" component="select" style={{ width: "150px","borderRadius": "5px","padding": "5px","fontSize": "14px", marginRight:'5px'}} onChange={formikProps.handleChange} onClick={this.onClickChangemaxPrice} >
+                                            <option value='100000000000'> Tất cả </option>
+                                            <option value='500000'  > Dưới 5 trăm VND </option>
+                                            <option value='1000000' > Dưới 1 triệu VND </option>
+                                            <option value='2000000' > Dưới 2 triệu VND </option>
+                                            <option value='5000000' > Dưới 5 triệu VND </option>
+                                        </Field>
+                                        <Field style={{ width: "200px", "border": "none","fontSize": "14px" }} onChange={formikProps.handleChange} onBlur={this.handleBlurKeySearch} type="text" name="keysearch" className="form-control" placeholder="Từ khóa tìm kiếm"></Field>
                                         <button style={{}} type="submit" className="btn btn-primary">Tìm kiếm</button>
                                     </Form>
                                 )}
@@ -117,14 +165,12 @@ class index extends Component {
                             </div>
                         </div>
                     </div>
-                    {/* <button className="btn btn-success">Thêm sản phẩm shop</button> */}
                     <h2>Danh sách sản phẩm</h2>
-                    {/* {elementrenderDanhSachSanPham} */}
-                    {/* Render danh sách sản phẩm shop */}
                     <RenderDanhSachSanPham 
                         elementDanhSachSanPhamShop = {elementDanhSachSanPhamShop}
                         countListProduct = {this.state.danhSachSanPhamShop.length}
                         keysearch = {this.state.keysearch}
+                        maxPrice = {this.state.maxPrice}
                     ></RenderDanhSachSanPham>
                 </div>
             );
@@ -132,15 +178,13 @@ class index extends Component {
         else {
             return (
                 <div>
-                    {/* <button className="btn btn-success">Thêm sản phẩm shop</button> */}
                     <NavLink to="themsanpham" className="btn btn-success">Thêm sản phẩm shop</NavLink>
                     <h2>Danh sách sản phẩm</h2>
                     <div>
-                        <img style={{
+                        <Spin style={{
                             "display": "block", "marginLeft": "auto",
                             "marginRight": "auto", "width": "200px"
-                        }}
-                            src="https://img.idesign.vn/2018/10/23/id-loading-1.gif"></img>
+                        }}></Spin>
                     </div>
                 </div>
             );
@@ -150,12 +194,12 @@ class index extends Component {
 
 function RenderDanhSachSanPham ( props ){
     
-    console.log(props)
-    if(props.countListProduct >0){
+    // console.log(props)
+    if(props.countListProduct > 0){
         if(props.keysearch){
             return (
                 <div>
-                <div>Kết quả tìm kiếm với từ khóa: '{ props.keysearch}' {props.countListProduct} kết quả được tìm thấy </div>
+                <div>Kết quả tìm kiếm với từ khóa: '{props.keysearch}' {props.countListProduct} kết quả được tìm thấy với mức giá {props.maxPrice} VND</div>
                 <table className="" style={{ fontSize: "14px" }}>
                     <thead>
                         <tr>
@@ -165,9 +209,6 @@ function RenderDanhSachSanPham ( props ){
                             <th className="text-center">Hình ảnh</th>
                             <th className="text-center">Ngày nhập</th>
                             <th className="text-center">Công cụ</th>
-                            <th className="text-center">
-
-                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -188,9 +229,6 @@ function RenderDanhSachSanPham ( props ){
                             <th className="text-center">Hình ảnh</th>
                             <th className="text-center">Ngày nhập</th>
                             <th className="text-center">Công cụ</th>
-                            <th className="text-center">
-
-                            </th>
                         </tr>
                     </thead>
                     <tbody>

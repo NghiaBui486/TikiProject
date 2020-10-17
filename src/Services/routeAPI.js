@@ -1,0 +1,1 @@
+export const linkAPI = "https://localhost:3005/"
